@@ -1,0 +1,75 @@
+<html>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	  // Handler for .ready() called.
+	addRow("selectionTable", "","","","");
+});
+function addRow(tableID , instructor, code, name, grade) {
+	 
+    var table = document.getElementById(tableID);
+
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+
+    var cell2 = row.insertCell(0);
+    cell2.innerHTML = instructor;
+
+    var cell2 = row.insertCell(1);
+    cell2.innerHTML = code;
+
+    var cell2 = row.insertCell(2);
+    cell2.innerHTML = name;
+  
+    var cell2 = row.insertCell(3);
+    cell2.innerHTML = grade;
+
+   // var cell3 = row.insertCell(2);
+   // var element2 = document.createElement("input");
+   // element2.type = "text";
+   // cell3.appendChild(element2);
+
+
+}
+  //window.onload=addRow("selectionTable");
+</script>
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="file:///Users/stephengadd/Desktop/bootstrap/GTPort.html">GT Port</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="file:///Users/stephengadd/Desktop/bootstrap/PersonalInformation.html">Student</a></li>
+      <li><a href="#">Registration</a></li>
+    </ul>
+  </div>
+</div>
+	</head>
+	<body>
+		<center>
+		<h1>Find Tutors</h1>
+		</center>
+		
+			<label></label>
+			<center>
+			 <TABLE id="selectionTable" width="750px" border="1">
+        <TR>
+            <TD><label>Instructor</label></TD>
+            <TD><label>Course Code</label> </TD>
+            <TD><label>Course Name</label> </TD>      
+            <TD><label>Average Grade</label> </TD>                  
+        </TR>
+    </TABLE>
+			
+			
+			
+			</table>
+		</center>
+		<right><button onclick="http://localhost:8081/GTPort_1.0/Login.htm" name="Go to Homepage">Go To Homepage</button></right>
+	</body>
+
+</html>

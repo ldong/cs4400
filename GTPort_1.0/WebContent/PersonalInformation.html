@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="file:///Users/stephengadd/Desktop/bootstrap/GTPort.html">GT Port</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="file:///Users/stephengadd/Desktop/bootstrap/PersonalInformation.html">Student</a></li>
+      <li><a href="#">Registration</a></li>
+    </ul>
+  </div>
+</div>
+	</head>
+	<body>
+		<center>
+			<table>
+				<tr>
+					<td><label>Name</label></td>
+					<td><input id="name" type="value"></input></td>
+				</tr>
+				<tr>
+					<td><label>Date of birth</label></td>
+					<td><input id="dateOfBirth" type="value"></input></td>
+				</tr>
+				<tr>
+					<td><label>Gender</label></td>
+					<td><select value="male"></select></td>
+				</tr>
+				<tr>
+					<td><label>Address</label></td>
+					<td><input id="address" type="value"></input></td>
+				</tr>
+				<tr>
+					<td><label>Permanent Address</label></td>
+					<td><input id="permanentAddress" type="value"></input></td>
+				</tr>
+				<tr>
+					<td><label>Contact Number</label></td>
+					<td><input id="contactNumber" type="value"></input></td>
+				</tr>
+				<tr>
+					<td><label>Email Address</label></td>
+					<td><input id="emailAddress" type="value"></input></td>
+				</tr>
+				<tr>
+					<td><label>Department</label></td>
+					<td><select></select></td>
+				</tr>
+				<tr>
+					<td><label>Position</label></td>
+					<td><select></select></td>
+				</tr>
+				<tr>
+					<td><label>Course</label></td>
+					<td><select></select></td>
+				</tr>
+				<tr>
+					<td><label>Section</label></td>
+					<td><select></select></td>
+				</tr>
+				<tr>
+					<td><label>Reason of Interest</label></td>
+					<td><input id="reasonOfInterest" type="value"></input></td>
+				</tr>
+				<tr>
+					<td></td><td><button>Submit</button></td>
+				<tr>
+			</table>
+		</center>
+	</body>
+		<script type="text/javascript">
+		function goToRegister(){
+			xml="<name>" + document.getElementById("name").value + "<name>";
+			xml+="<dateOfBirth>" + document.getElementById("dateOfBirth").value + "<dateOfBirth>";
+			xml+="<address>" + document.getElementById("address").value + "<address>";
+			xml+="<permanentAddress>" + document.getElementById("permanentAddress").value + "<permanentAddress>";
+			xml+="<contactNumber>" + document.getElementById("contactNumber").value + "<contactNumber>";
+			xml+="<emailAddress>" + document.getElementById("emailAddress").value + "<emailAddress>";
+			xml+="<reasonOfInterest>" + document.getElementById("reasonOfInterest").value + "<reasonOfInterest>";
+
+			callToServer(xml);
+		}
+		
+		function callToServer(xml){
+			$.ajax({ 
+				type: 'Post',
+				url: '/GTPort_1.0/rs/CreateUser/create', 
+				//processData: false, 
+				//contentType: 'text',
+				 data: xml, 
+				//success: success,
+				//contentType: 'application/xml; charset=utf-8',
+				dataType: "text",
+				success: handleResponse,
+
+
+				error: handleResponse
+			}); 
+		}
+		
+		function handleResponse(data){
+			console.log("KK"+data);
+			console.log("Done");
+		}
+		function errorResponse(){
+			console.log("error");
+		}
+	</script>
+</html>

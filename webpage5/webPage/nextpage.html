@@ -1,0 +1,43 @@
+<?php session_start(); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>This is webpage for cs4400 GROUP 17</title>
+</head>
+    <body>
+    	<p>Create User Page</p>
+        <form method="post" action="createuser.php">
+		    <label for="userNameLabel">User Name: </label>
+	        <input type="text" id="username" name="username" /><br />
+            <?php 
+                $_SESSION['username'] = $_POST['username'];
+            ?>
+		    <label for="passwordLabel">Password: </label>
+		    <input type="password" id="password" name="password" /> <br />
+            <?php 
+                $_SESSION['password'] = $_POST['password'];
+            ?>
+            <label for="passwordLabel">Password: </label>
+            <input type="password" id="password" name="repassword" /> <br />
+            <?php 
+                $_SESSION['repassword'] = $_POST['repassword'];
+            ?>
+            <select name="mydropdown">
+            <option value="Student">Student</option>
+            <option value="Faculty">Faculty</option>
+            </select>
+            <?php 
+                $_SESSION['mydropdown'] = $_POST['mydropdown'];
+            ?>
+          
+          <FORM METHOD="GET" ACTION="secondpage.htm"
+          <INPUT TYPE="submit" Name="redirect" VALUE="To Next Page">
+          </FORM>
+
+    	<!--<input type="submit" value="Click me to submit" name="submit"/> -->
+
+    	</form>
+    </body>
+</html>
+

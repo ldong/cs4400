@@ -1,0 +1,76 @@
+ else
+      {
+        $query = "SELECT Username FROM User WHERE Username='$userName'";
+        $result= mysql_query($query);
+        $count = mysql_num_rows($result);
+       
+        if($count==1)
+        {
+           echo "Sorry, $userName already exists!</br>";
+           echo "<a href=\"createuser.html\">Register</a>";
+        }
+        else if(strlen($userName) > 16 || strlen($pasWord) > 16 )
+        {
+           echo 'Username/Password is too long, please try it again</br>';
+           echo "<a href=\"createuser.html\">Register</a>";
+           
+        }
+        else if(strlen($userName)>0 && strlen($passWord) >0)
+        {
+          /* create the query */
+          $query = "INSERT INTO User (Username, Password) "
+                   . "VALUES ('$userName', '$passWord')";
+          $result = mysql_query($query) or die('Error querying database.');
+
+          $query = "INSERT INTO Regular_user (Username, Address, Name, Email_Id, DOB, Permanent_Address, Gender, Contact_No)"
+                   . "VALUES ('$userName', '$address','$name','$email_id','$dob','$oermanent_address','$gender','$contact_no')";
+          $result = mysql_query($query) or die('Error querying database.');
+
+          $query = "INSERT INTO Student(Username, Major,Degree)"
+                   . "VALUES ('$username','$major','$degree')";
+          $result = mysql_query($query) or die('Error querying database');
+
+          $query = "INSERT INTO Education_History(Username,Year_Of_Grad,Name_Of_School,Major,Degree,GPA)"
+                   . "VALUES('$username','$year_of_grad','$name_of_school','$major','$degree','$gpa')"
+          $result = mysql_query($query) or die('Error querying database');
+
+          $query = "INSERT INTO Faculty(Username, Position,Dept_Id)"
+                   . "VALUES ('$username','$position','$dept_id')";
+          $result = mysql_query($query) or die('Error querying database');
+
+          $query = "INSERT INTO Research_Interests(Username,Interest)"
+                   . "VALUES ('$username','$interest')";
+          $result = mysql_query($query) or die('Error querying database');
+
+          echo "Thank you! You have successfully registered $userName";
+        }
+          /* close the DB connection*/
+          mysql_close($dbc); 
+
+      }
+
+
+
+
+
+          $query = "INSERT INTO Regular_user (Username, Address, Name, Email_Id, DOB, Permanent_Address, Gender, Contact_No)"
+                   . "VALUES ('$userName', '$address','$name','$email_id','$dob','$oermanent_address','$gender','$contact_no')";
+          $result = mysql_query($query) or die('Error querying database.');
+
+          $query = "INSERT INTO Student(Username, Major,Degree)"
+                   . "VALUES ('$username','$major','$degree')";
+          $result = mysql_query($query) or die('Error querying database');
+
+          $query = "INSERT INTO Education_History(Username,Year_Of_Grad,Name_Of_School,Major,Degree,GPA)"
+                   . "VALUES('$username','$year_of_grad','$name_of_school','$major','$degree','$gpa')"
+          $result = mysql_query($query) or die('Error querying database');
+
+          $query = "INSERT INTO Faculty(Username, Position,Dept_Id)"
+                   . "VALUES ('$username','$position','$dept_id')";
+          $result = mysql_query($query) or die('Error querying database');
+
+          $query = "INSERT INTO Research_Interests(Username,Interest)"
+                   . "VALUES ('$username','$interest')";
+          $result = mysql_query($query) or die('Error querying database');
+
+ 

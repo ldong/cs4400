@@ -1,0 +1,73 @@
+<html>
+	<head>
+	 <script src="js/jquery-ui-1.8.18.custom.min.js"></script>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#"><img src="buzz1.jpeg" alt="Smiley face" height="25" width="25">GT Port</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="file:///Users/stephengadd/Desktop/bootstrap/PersonalInformation.html">Student</a></li>
+      <li><a href="#">Registration</a></li>
+    </ul>
+  </div>
+</div>
+	</head>
+<body>
+	<table>
+	<tr>
+	<td><label>Username</label></td>
+	<td><input id ="userNameLogin" type="value"></input></td>
+	</tr>
+	<tr>
+	<td><label>Password</label></td>
+	<td><input id="passwordLogin" type="password"></input></td>
+	</tr>
+	<tr><td></td><td><button onClick= getLoginInfo()>Login</button><p><p>
+	<button onClick="href=http://localhost:8081/GTPort_1.0/CreateAccount.html">Create Account</button></td>
+	</tr>
+	<table>
+		<center>
+
+	<img src="buzz1.jpeg" alt="Smiley face" height="300" width="300">
+	</center>
+</body>
+
+<script type="text/javascript">
+	function getLoginInfo(){
+		var xml = "<username>" + document.getElementById("userNameLogin").value +"</username>";
+		xml += "<password>" + document.getElementById("passwordLogin").value + "</password>";
+		//parent.location="/CreateAccount.html"
+		console.log(xml);
+		Login(xml);
+		return xml
+	}
+	 function Login(xml){
+		$.ajax({ 
+			type: 'Post',
+			url: '/GTPort_1.0/rs/Login/verify', 
+			//processData: false, 
+			//contentType: 'text',
+			 data: xml, 
+			//success: success,
+			//contentType: 'application/xml; charset=utf-8',
+			dataType: "text",
+			success: handleResponse,
+
+
+			error: errorResponse
+		}); 
+	} 
+	
+	function handleResponse(data){
+		console.log("KK"+data);
+		console.log("Done");
+	}
+	function errorResponse(){
+		console.log("error");
+	}
+	
+</script>
+</html>

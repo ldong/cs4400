@@ -1,0 +1,89 @@
+<html>
+<title>
+	Tutor LogBook
+</title>
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="file:///Users/stephengadd/Desktop/bootstrap/GTPort.html">GT Port</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="file:///Users/stephengadd/Desktop/bootstrap/GTPort.html">Student</a></li>
+      <li><a href="#">Registration</a></li>
+    </ul>
+  </div>
+</div>
+	</head>
+	<body>
+		<center>
+	<table>	
+	<tr>
+		<td><label>Tutor Name</label></td>
+		<td><label id="tutorName"></label></td>
+	</tr>
+	<tr>
+	<td><label>course code</label></td>
+	<td><selection id="userName"></selection></td>
+	</tr>
+	<tr>
+	<td><label>Student ID</label></td>
+	<td><input id="studentID" type="value"></input></td>
+	</tr>
+	<tr>
+	<td><label>Student Name</label>
+	<td><input  id="studentName" type="value"></input></td>
+	</tr>
+	<tr>
+	<td><label>Type of User</label></td>
+	<td><select id="typeOfUser">
+		<option>Student</option>
+		<option>Teacher</option>
+		<option>Faculty</option>
+	</select></td>
+	</tr>
+	<tr>
+	<td>
+	</td>
+	<td><button onclick=goToRegister()>Register</button>
+	<button>Cancel</button></td>
+	</tr>
+		</table>
+	</center>
+	</body>
+	<script type="text/javascript">
+		function goToRegister(){
+			xml="<username>" + document.getElementById("userName").value + "<username>";
+			xml+="<password>" + document.getElementById("password").value + "<password>";
+			xml+="<typeOfUser>" + document.getElementById("typeOfUser").value + "<typeOfUser>";
+			callToServer(xml);
+		}
+		
+		function callToServer(xml){
+			$.ajax({ 
+				type: 'Post',
+				url: '/GTPort_1.0/rs/CreateUser/create', 
+				//processData: false, 
+				//contentType: 'text',
+				 data: xml, 
+				//success: success,
+				//contentType: 'application/xml; charset=utf-8',
+				dataType: "text",
+				success: handleResponse,
+
+
+				error: handleResponse
+			}); 
+		}
+		
+		function handleResponse(data){
+			console.log("KK"+data);
+			console.log("Done");
+		}
+		function errorResponse(){
+			console.log("error");
+		}
+	</script>
+</html>

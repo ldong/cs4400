@@ -1,0 +1,130 @@
+<html>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	  // Handler for .ready() called.
+	addRow("selectionTable");
+});
+function addRow(tableID) {
+	 
+    var table = document.getElementById(tableID);
+
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+
+    var cell1 = row.insertCell(0);
+    var element1 = document.createElement("input");
+    element1.type = "checkbox";
+    cell1.appendChild(element1);
+
+    var cell2 = row.insertCell(1);
+    cell2.innerHTML = "info";
+
+    var cell2 = row.insertCell(2);
+    cell2.innerHTML = "info";
+    
+    var cell2 = row.insertCell(3);
+    cell2.innerHTML = "info";
+    
+    var cell2 = row.insertCell(4);
+    cell2.innerHTML = "info";
+    
+    var cell2 = row.insertCell(5);
+    cell2.innerHTML = "info";
+    
+    var cell2 = row.insertCell(6);
+    cell2.innerHTML = "info";
+    
+    var cell2 = row.insertCell(7);
+    cell2.innerHTML = "info";
+    
+    var cell2 = row.insertCell(8);
+    cell2.innerHTML = "info";
+    
+    var cell2 = row.insertCell(9);
+    cell2.innerHTML = "info";
+    
+    var cell2 = row.insertCell(10);
+    cell2.innerHTML = "info";
+    
+    var cell2 = row.insertCell(11);
+    cell2.innerHTML = "info";
+    
+    var cell1 = row.insertCell(12);
+    var element1 = document.createElement("select");
+    //element1.type = "select";
+    element1.value = "Register" ;
+    element1.value = "Register";
+    cell1.appendChild(element1);
+   // var cell3 = row.insertCell(2);
+   // var element2 = document.createElement("input");
+   // element2.type = "text";
+   // cell3.appendChild(element2);
+
+
+}
+  //window.onload=addRow("selectionTable");
+</script>
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="file:///Users/stephengadd/Desktop/bootstrap/GTPort.html">GT Port</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="file:///Users/stephengadd/Desktop/bootstrap/PersonalInformation.html">Student</a></li>
+      <li><a href="#">Registration</a></li>
+    </ul>
+  </div>
+</div>
+	</head>
+	<body>
+		<center>
+		<h1>Course Selection</h1>
+		</center>
+			<table>
+				<tr>
+					<td><label>Term</label></td>
+					<td><label id="term"></label></td>
+				</tr>
+				<tr>
+					<td><label>Department</label></td>
+					<td><label id="deparment"></label></td>
+				</tr>
+				<tr>
+
+				</tr>
+			</table>
+			<center>
+			 <TABLE id="selectionTable" width="350px" border="1">
+        <TR>
+            <TD><label>Select</label></TD>
+            <TD><label>CRN</label> </TD>
+            <TD><label>Title</label> </TD>
+            <TD><label>Course Code</label> </TD>
+            <TD><label>Section</label> </TD>
+            <TD><label>Instructor</label> </TD>
+            <TD><label>Days</label> </TD>
+            <TD><label>Section</label> </TD>
+            <TD><label>Instructer</label> </TD>
+            <TD><label>Days</label> </TD>
+            <TD><label>Time</label> </TD>
+            <TD><label>Loacation</label> </TD>
+            <TD><label>Mode of Grading</label> </TD>
+        </TR>
+    </TABLE>
+			
+			
+			
+			</table>
+		</center>
+		<left><button>Back</button></left>
+		<right><button>Registar</button></right>
+	</body>
+	<script type="text/javascript">
+	
+	</script>
+</html>

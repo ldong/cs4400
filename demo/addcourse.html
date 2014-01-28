@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Student Personal Infomation form</title>
+</head>
+    <body>
+    	<p> Add course Page</p>
+        <form method="post" action="addcourse.php">       </form>
+		    <label for="CRN">CRN : </label>
+	        <input type="text" id="CRN" name="CRN" /><br />
+
+		    <label for="TITLE">TITLE: </label>
+		    <input type="text" id="title" name="title" /> <br />
+
+            <label for="COURSE_CODE">COURSE CODE: </label>
+            <input type="text" id="ccode" name="ccode" /> <br />
+
+            <label for="INSTRUCTORS">INSTRUCTORS: </label>
+            <input type="text" id="instructor" name="instructor" /> <br />
+
+            TERM:
+            <select name="ccode">
+            <option value="fall">FALL</option>
+            <option value="spring">SPRING</option>
+            </select>
+            </br>
+
+            <label for="deptLabel">Department: </label> </br>
+
+
+            <label for="credit">CREDITS: </label>
+            <input type="text" id="credit" name="credits" value="3.0"/>  <br/>
+            
+            DAYS:
+            <select name="days">
+            <option value="mwf">MWF</option>
+            <option value="tth">TTH</option>
+            </select>
+            </br>
+
+
+            <label for="time">TIME: </label>
+            <input type="text" id="time" name="time"/>
+            <br/>
+        
+
+            <label for="loc">LOCATION: </label>
+            <input type="text" id="loc" name="loc"/>
+            <br/>
+
+
+            </br>
+            <input type="reset"/>
+            <input type="submit" value="add" name="add"/>
+    </body>
+</html>
+

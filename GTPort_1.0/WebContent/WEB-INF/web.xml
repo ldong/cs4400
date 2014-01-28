@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>JQueryDeck</display-name>
+	<welcome-file-list>
+		<welcome-file>GTPort.html</welcome-file>
+		<welcome-file>uom.html</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+<!--   	<servlet>
+		<description>LoginServlet</description>
+		<display-name>LoginServlet</display-name>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>main.Login</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<description>CreateUserServlet</description>
+		<display-name>CreateUserServlet</display-name>
+		<servlet-name>CreateUserServlet</servlet-name>
+		<servlet-class>main.CreateUser</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>  -->
+ 	<servlet>
+		<servlet-name>ServletAdaptor</servlet-name>
+		<servlet-class>
+			com.sun.jersey.server.impl.container.servlet.ServletAdaptor</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletAdaptor</servlet-name>
+		<url-pattern>/rs/*</url-pattern>
+	</servlet-mapping> 
+</web-app>
